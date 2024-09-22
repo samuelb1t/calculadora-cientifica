@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <section class="calculadora">
-
+      <div class="visor">
+        <span class="digitado"></span>
+        <span class="digitando">0</span>
+      </div>
+      <div class="botoes">
+        <button class="botao">2°</button>
+        <button class="botao">π</button>
+        <button class="botao">e</button>
+        <button class="botao delete" onclick="reset()">C</button>
+        <button class="botao" onclick="apaga()">
+          <img class="apaga" src="./img/apaga.svg" />
+        </button>
+        <button class="botao"><img src="./img/x^2.svg" /></button>
+        <button class="botao">1/x</button>
+        <button class="botao"><img src="./img/modulo.svg" /></button>
+        <button class="botao">exp</button>
+        <button class="botao">mod</button>
+        <button class="botao"><img src="./img/raiz.svg" /></button>
+        <button class="botao">(</button>
+        <button class="botao">)</button>
+        <button class="botao">n!</button>
+        <button class="botao" onclick="operacao('/')">÷</button>
+        <button class="botao"><img src="./img/x^y.svg" /></button>
+        <button class="botao cor" onclick="numero(7)">7</button>
+        <button class="botao cor" onclick="numero(8)">8</button>
+        <button class="botao cor" onclick="numero(9)">9</button>
+        <button class="botao" onclick="operacao('*')">x</button>
+        <button class="botao"><img src="./img/10^x.svg" /></button>
+        <button class="botao cor" onclick="numero(4)">4</button>
+        <button class="botao cor" onclick="numero(5)">5</button>
+        <button class="botao cor" onclick="numero(6)">6</button>
+        <button class="botao" onclick="operacao('-')">-</button>
+        <button class="botao">log</button>
+        <button class="botao cor" onclick="numero(1)">1</button>
+        <button class="botao cor" onclick="numero(2)">2</button>
+        <button class="botao cor" onclick="numero(3)">3</button>
+        <button class="botao" onclick="operacao('+')">+</button>
+        <button class="botao">ln</button>
+        <button class="botao cor">+/-</button>
+        <button class="botao cor" onclick="numero(0)">0</button>
+        <button class="botao cor">,</button>
+        <button class="botao">=</button>
+      </div>
     </section>
-</body>
+  </body>
+  <script src="script.js"></script>
 </html>
