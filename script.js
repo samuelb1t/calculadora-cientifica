@@ -1,7 +1,7 @@
 const digitando = document.querySelector(".digitando");
 const digitado = document.querySelector(".digitado");
 const botaoReset = document.querySelector(".delete");
-let clicouOp = true;
+let clicouOp = false;
 
 teclado();
 
@@ -17,6 +17,7 @@ function numero(num) {
 
 function operacao(op) {
   if (!clicouOp) {
+    tiraPonto();
     clicouOp = true;
     digitado.innerText += " " + digitando.innerText + " " + op;
   }
@@ -24,11 +25,13 @@ function operacao(op) {
 
 function teclado() {
   window.addEventListener("keyup", (e) => {
-    console.log(e.key);
     if (!isNaN(+e.key)) {
       numero(+e.key);
     } else if (e.key == "Backspace") {
       apaga();
+    } else if (e.key == "Enter") {
+      console.log(digitando.innerText);
+      calcula();
     }
   });
 }
@@ -49,5 +52,30 @@ function reset() {
   } else {
     digitando.innerText = "0";
     digitado.innerText = "";
+  }
+}
+
+function calcula() {
+  let expressao = digitado.innerText;
+  if (!digitado.innerText.includes("=")) {
+    tiraPonto();
+    digitado.innerText += " " + digitando.innerText;
+    expressao = digitado.innerText;
+    digitando.innerText = eval(expressao);
+    digitado.innerText += " =";
+  } else {
+  }
+}
+
+function tiraPonto() {
+  const ultimoDig = digitando.innerText.length - 1;
+  if (digitando.innerText[ultimoDig] == ".") {
+    digitando.innerText = digitando.innerText.slice(0, ultimoDig);
+  }
+}
+
+function virgula() {
+  if (!digitando.innerText.includes(".")) {
+    digitando.innerText += ".";
   }
 }
