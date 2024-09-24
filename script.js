@@ -79,3 +79,14 @@ function virgula() {
     digitando.innerText += ".";
   }
 }
+
+function trocaSinal() {
+  const ultimoDig = digitando.innerText.length;
+  if (!digitando.innerText.includes("-")) {
+    digitando.innerText = "-" + digitando.innerText;
+  } else {
+    console.log(digitando.innerText[0]);
+    digitando.innerText = digitando.innerText.slice(1, ultimoDig);
+    //digitando.innerText
+  }
+}
