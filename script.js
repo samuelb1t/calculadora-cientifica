@@ -3,6 +3,8 @@ const digitado = document.querySelector(".digitado");
 const botaoReset = document.querySelector(".delete");
 let clicouOp = false;
 
+console.log(2 ** 2);
+
 teclado();
 
 function numero(num) {
@@ -89,4 +91,8 @@ function trocaSinal() {
     digitando.innerText = digitando.innerText.slice(1, ultimoDig);
     //digitando.innerText
   }
+}
+
+function quadrado() {
+  digitando.innerText = parseInt(digitando.innerText) ** 2;
 }
